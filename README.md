@@ -9,3 +9,6 @@ I also want to practice OOP and working with CSS grid, so wherever I can, I'll t
 ## How to view?
 
 There are no dependencies for these projects (except for a modern browser), so you can simply download the directories and view the index.html files. Have fun!
+
+## What are these projects?
+Basically, I've stolen inspiration from other people and try to implement those little ideas with my own code. They are from different courses, online challenges, or repositories of friends. You learn by imitating :)
