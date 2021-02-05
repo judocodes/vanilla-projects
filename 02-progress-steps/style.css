@@ -1,1 +1,92 @@
 @import url('https//fonts.googleapis.com/css?family=Muli&display=swap');
+
+:root {
+    --progress-filled: tomato;
+    --progress-empty: #e5e5e5;
+}
+
+body {
+    display: grid;
+    align-items: center;
+    justify-items: center;
+    width: 100vw;
+    height: 100vh;
+    font-family: Muli, sans-serif;
+    color: #777;
+}
+
+.circle {
+    border: 3px solid var(--progress-empty);
+    background-color: #fff;
+    z-index: 0;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: grid;
+    align-items: center;
+    justify-items: center;
+    transition: border-color 300ms ease-in 100ms;
+}
+
+.circle.active {
+    border-color: var(--progress-filled);
+    border-width: 5px;
+}
+
+.progress-wrapper {
+    display: grid;
+    gap: 3rem;
+    grid-template-columns: repeat(4, 1fr);
+    justify-items: center;
+    align-items: center;
+    position: relative;
+}
+
+.progress-bar,
+.progress-wrapper:before {
+    content: '';
+    background-color: var(--progress-empty);
+    height: 3px;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    z-index: -1;
+    position: absolute;
+    grid-column: span 4;
+    transform: translateY(-50%);
+}
+
+.progress-bar {
+    background-color: var(--progress-filled);
+    width: 0%;
+    height: 5px;
+    transition: 300ms;
+}
+
+.buttons {
+    width: 50%;
+    margin: 2rem auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-items: center;
+    gap: 0.5rem;
+}
+
+.buttons button {
+    border: 0;
+    font-family: inherit;
+    padding: 0.8rem 2rem;
+    font-size: 1rem;
+    font-weight: 600;
+    display: grid;
+    align-items: center;
+    justify-items: center;
+    color: #fff;
+    background-color: var(--progress-filled);
+    border-radius: 5px;
+}
+
+.buttons button:disabled {
+    cursor: not-allowed;
+    opacity: 0.5;
+}
