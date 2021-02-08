@@ -1,0 +1,129 @@
+@import url('https://fonts.googleapis.com/css?family=Lato&display=swap');
+
+:root {
+    --animation: transform 0.4s linear;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Lato', sans-serif;
+    background-color: #333;
+    color: #222;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    background: #fff;
+    transform-origin: top left;
+    min-height: 120vh;
+    width: 100%;
+    transition: var(--animation);
+}
+
+.container.show-nav {
+    transform: rotate(-20deg);
+}
+
+.container.show-nav .circle {
+    transform: rotate(-70deg);
+}
+
+.circle {
+    position: fixed;
+    top: -100px;
+    left: -100px;
+    background-color: tomato;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    transition: var(--animation);
+}
+
+.circle button {
+    position: absolute;
+    cursor: pointer;
+    top: 45%;
+    left: 60%;
+    height: 100px;
+    color: white;
+    background: transparent;
+    font-size: 2rem;
+    border: 0;
+}
+
+.circle button:focus {
+    outline: none;
+}
+
+.circle button#close {
+    left: 25%;
+}
+
+.content {
+    height: 100%;
+    max-width: 80%;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.content h1 {
+    font-size: 3rem;
+    margin: 0;
+}
+
+.content small {
+    color: #777;
+    text-decoration: cursive;
+}
+
+.content p {
+    line-height: 1.5;
+    font-size: 1.2rem;
+    color: #333;
+}
+.content img {
+    width: 100%;
+    padding: 1rem;
+}
+
+nav {
+    position: fixed;
+    bottom: 25px;
+    left: 25px;
+}
+
+nav ul {
+    list-style: none;
+}
+
+.container.show-nav + nav ul li {
+    transform: translateX(0);
+}
+
+nav ul li {
+    display: flex;
+    align-items: center;
+    color: white;
+    transform: translateX(-250%);
+    transition: var(--animation);
+    margin: 1.5rem 0;
+}
+
+nav ul li i {
+    margin-right: 1rem;
+    font-size: 1.5rem;
+    color: #ccc;
+}
+
+nav ul li:nth-child(2) {
+    margin-left: 25px;
+    transition-delay: 100ms;
+}
+nav ul li:nth-child(3) {
+    margin-left: 50px;
+    transition-delay: 200ms;
+}
