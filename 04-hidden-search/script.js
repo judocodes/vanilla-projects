@@ -9,10 +9,16 @@
 
         setupListeners() {
             this.button.addEventListener('click', toggleSearchbar.bind(this));
+            this.search.addEventListener('keydown', closeOnEsc.bind(this));
 
             function toggleSearchbar() {
                 this.hostElem.classList.toggle('search-active');
                 this.search.focus();
+            }
+
+            function closeOnEsc(e) {
+                if (e.code != 'Escape') return;
+                else this.hostElem.classList.toggle('search-active');
             }
         }
     }
