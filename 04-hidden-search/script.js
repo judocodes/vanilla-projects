@@ -3,6 +3,7 @@
         constructor(hostElem) {
             this.hostElem = hostElem;
             this.button = this.hostElem.querySelector('.btn');
+            this.search = this.hostElem.querySelector('.search');
             this.setupListeners();
         }
 
@@ -11,6 +12,7 @@
 
             function toggleSearchbar() {
                 this.hostElem.classList.toggle('search-active');
+                this.search.focus();
             }
         }
     }
