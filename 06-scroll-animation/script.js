@@ -23,10 +23,7 @@
         checkIfInView(entries, observer) {
             entries.forEach(checkIfIntersecting.bind(this));
 
-            console.log(observer);
-
             function checkIfIntersecting(entry) {
-                console.log(entry);
                 if (entry.isIntersecting) {
                     this.element.classList.add('show');
                 } else {
