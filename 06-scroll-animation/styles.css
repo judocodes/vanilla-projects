@@ -41,11 +41,11 @@ h1 {
 }
 
 .box:nth-of-type(even) {
-    transform: translateX(200%);
+    transform: translateX(40%);
 }
 
 .box:nth-of-type(odd) {
-    transform: translateX(-400%);
+    transform: translateX(-40%);
 }
 
 .box.show {
