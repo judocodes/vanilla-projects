@@ -1,0 +1,104 @@
+@import url('https://www.fonts.googleapis.com/css?family=Muli&display=swap');
+
+:root {
+    --transition: 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    --lightblue: hsl(210, 80%, 40%);
+    --darkblue: hsl(219, 85%, 20%);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Muli', sans-serif;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    color: #fff;
+    background: var(--lightblue);
+    overflow: hidden;
+}
+
+a {
+    text-decoration: none;
+    color: var(--lightblue);
+}
+
+a:hover {
+    color: #fff;
+}
+
+.container {
+    background: var(--darkblue);
+    border-radius: 5px;
+    padding: 4rem 6rem;
+}
+
+.container h1 {
+    text-align: left;
+    margin-bottom: 3rem;
+}
+
+.form-control {
+    position: relative;
+    margin-bottom: 3rem;
+}
+
+.form-control input {
+    display: block;
+    font-size: 1rem;
+    width: 100%;
+    color: #fff;
+    border: 0;
+    padding: 0.5rem 0;
+    background: transparent;
+    border-bottom: 2px solid var(--lightblue);
+}
+
+.form-control label {
+    position: absolute;
+    left: 0;
+    top: 0.5rem;
+    color: var(--lightblue);
+}
+
+.form-control input:focus,
+.form-control input:valid {
+    outline: none;
+    border-bottom-color: #fff;
+}
+
+.container button {
+    width: 100%;
+    border: 0;
+    font-size: 1.125rem;
+    padding: 0.5rem 2rem;
+    border-radius: 5px;
+    background: var(--lightblue);
+    color: #fff;
+    cursor: pointer;
+}
+
+.container button:focus {
+    outline: none;
+}
+
+.container button:active {
+    transform: scale(0.99);
+}
+
+.form-control label span {
+    display: inline-block;
+    min-width: 5px;
+    transition: all 300ms var(--transition);
+}
+
+.form-control input:valid + label span,
+.form-control input:focus + label span {
+    color: #fff;
+    transform: translateY(-1.5rem);
+}
